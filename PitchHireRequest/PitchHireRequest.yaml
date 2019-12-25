@@ -1,0 +1,725 @@
+AxForm:
+  guid: 89ddb1f1-232d-4946-af53-feac6c7c9cab
+  name: Hire Request
+  db_name: PitchHireRequest
+  parent: 7202cb0a-7e68-4073-ab2b-2b9e94ca0fcd
+  position: 0
+  tom_label: '{{requestId}}'
+  icon: child
+AxFields:
+- guid: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+  name: Request
+  db_name:
+  position: 0
+  options_json:
+  private_options_json:
+  field_type_tag:
+  is_tab: true
+  is_required: false
+  is_whole_row: false
+  parent: None
+- guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+  name: Request ID
+  db_name: requestId
+  position: 0
+  options_json: '{"comparator":"string"}'
+  private_options_json: '{"algorithm":"# first value of counter\nif not ax.counter:\n    ax.counter=1\n#
+    ax.value will be registration number\nax.value=f\"NHR{ax.counter}\"\n# Increment
+    counter\nax.counter=str(int(ax.counter) + 1)","counterKey":"89ddb1f1-232d-4946-af53-feac6c7c9cab"}'
+  field_type_tag: AxNum
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: b1ce693c-6f2b-4468-bb4a-6361d17dbe9d
+  name: Matching Profile
+  db_name: profiles
+  position: 0
+  options_json: '{"isWholeRow":true,"height":400,"inline_height":400,"enableFormModal":true,"enableAddRelation":true,"addRelationLabel":"Add
+    candidate","form":"PitchHireRequestCandidate","grid":"Default","inline_grid":"Default"}'
+  private_options_json:
+  field_type_tag: Ax1tomTable
+  is_tab: false
+  is_required: false
+  is_whole_row: true
+  parent: c4a309c5-84e3-473d-8407-bf30e792c7af
+- guid: 4f8e4d5c-e226-4ef4-abd5-d505ed8d2611
+  name: Comments 2
+  db_name: comments2
+  position: 0
+  options_json: '{"maxHeight":350}'
+  private_options_json:
+  field_type_tag: AxComments
+  is_tab: false
+  is_required: false
+  is_whole_row: true
+  parent: 8e878e67-3382-4fac-8042-eb0140555ade
+- guid: 0aa43b31-eec8-4bf6-aede-25df21509b31
+  name: Requester
+  db_name: requester
+  position: 1
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxAuthor
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: c4a309c5-84e3-473d-8407-bf30e792c7af
+  name: Candidates
+  db_name:
+  position: 1
+  options_json:
+  private_options_json:
+  field_type_tag:
+  is_tab: true
+  is_required: false
+  is_whole_row: false
+  parent: None
+- guid: 33a7a43c-9e98-43c7-944c-7e432a16c3a3
+  name: Date
+  db_name: date
+  position: 2
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxDate
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: 8e878e67-3382-4fac-8042-eb0140555ade
+  name: Comments
+  db_name:
+  position: 2
+  options_json:
+  private_options_json:
+  field_type_tag:
+  is_tab: true
+  is_required: false
+  is_whole_row: false
+  parent: None
+- guid: fca61ece-d8c5-421d-bb76-079794b3bdc1
+  name: Department Name
+  db_name: dep
+  position: 3
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxString
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: cca73704-a1c0-44fd-bd0a-938bf64ba3b6
+  name: Type of Employment
+  db_name: type
+  position: 4
+  options_json: '{"items":"[\n    {\n        \"text\": \"Full Time\",\n        \"value\":
+    \"1\"\n    },\n    {\n        \"text\": \"Part Time\",\n        \"value\": \"2\"\n    },\n    {\n        \"text\":
+    \"Contract\",\n        \"value\": \"4\"\n    },\n    {\n        \"text\": \"Trainee\",\n        \"value\":
+    \"5\"\n    },\n    {\n        \"text\": \"Intern\",\n        \"value\": \"6\"\n    }\n]"}'
+  private_options_json:
+  field_type_tag: AxChoise
+  is_tab: false
+  is_required: true
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: 8fe9e7d0-cf75-45f5-90c3-59a68a3394e2
+  name: Position Title
+  db_name: position
+  position: 5
+  options_json: '{"items":"[\n    { \"text\": \"HR Executive\", \"value\": \"1\"},\n    {
+    \"text\": \"Sales Manager\", \"value\": \"2\"},\n    { \"text\": \"Customer Support
+    Executive\", \"value\": \"3\"},\n    { \"text\": \"Business Analyst\", \"value\":
+    \"4\"},\n    { \"text\": \"Developer\", \"value\": \"5\"},\n    { \"text\": \"Sales
+    Executive\", \"value\": \"6\"},\n    { \"text\": \"Finance Executive\", \"value\":
+    \"7\"},\n    { \"text\": \"Finance Executive\", \"value\": \"8\"}\n]"}'
+  private_options_json:
+  field_type_tag: AxChoise
+  is_tab: false
+  is_required: true
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: a7f9c3e2-3be0-4952-bff7-fae24e4615fa
+  name: Number Of Positions
+  db_name: numberOfPos
+  position: 6
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxInteger
+  is_tab: false
+  is_required: true
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: d9f518aa-a486-4fa7-9ecd-95d6554b1943
+  name: Job Location
+  db_name: location
+  position: 7
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxString
+  is_tab: false
+  is_required: true
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: ee4f3496-23ce-4580-9eae-79729ffbfb0b
+  name: Job Description
+  db_name: description
+  position: 8
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxMarkdown
+  is_tab: false
+  is_required: false
+  is_whole_row: true
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: 264b3114-b924-46db-bdb4-cbbc0a0bf978
+  name: Minimum Required Experience
+  db_name: minExp
+  position: 9
+  options_json: '{"minValue":0,"maxValue":"10","step":1}'
+  private_options_json:
+  field_type_tag: AxIntSlider
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: b17db692-c3ab-4270-9066-179b7690fe9d
+  name: Maximum Preferred Experience
+  db_name: maxExp
+  position: 10
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxIntSlider
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: fe322348-3860-4d06-b0e1-d2b0e32d16f8
+  name: Essential Skills
+  db_name: skills
+  position: 11
+  options_json: '{"items":"[\n    \"Project Management\",\n    \"Human resource management\",\n    \"Full
+    stack developer\"\n]"}'
+  private_options_json:
+  field_type_tag: AxTags
+  is_tab: false
+  is_required: true
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: ad859abe-abd5-4d1c-befc-88fedadec0f0
+  name: preferedSkills
+  db_name: prefSkills
+  position: 12
+  options_json: '{"items":"[\n    \"C#\",\n    \"Python\",\n    \"Javascript\"\n]"}'
+  private_options_json:
+  field_type_tag: AxTags
+  is_tab: false
+  is_required: true
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: c6e38517-8322-417c-ac01-352f7ef8acc8
+  name: Compulsory Qualification
+  db_name: qualification
+  position: 13
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxString
+  is_tab: false
+  is_required: true
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: 00462c35-3e79-492d-8519-03a56ec992c6
+  name: Preferred Qualification
+  db_name: prefQualification
+  position: 14
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxString
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: dbecd5f3-d27a-45f5-82d1-ca37332b6116
+  name: Visa Required
+  db_name: visa
+  position: 15
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxSwitch
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+- guid: 4eac79ed-9e4b-4a06-ae17-eca521ec5b96
+  name: Request State
+  db_name: rowState
+  position: 16
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxState
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+AxMetrics:
+- guid: f9522ab0-0c91-42ae-b990-d3c4eef3a3fa
+  key: 89ddb1f1-232d-4946-af53-feac6c7c9cab
+  value: '2'
+AxGrids:
+- guid: fce9fe53-3af0-442d-9130-abf06538a1ac
+  name: All requests
+  db_name: All
+  position: 1
+  options_json: '{"enableQuickSearch":true,"enableFlatMode":false,"enableColumnsResize":true,"enableFiltering":true,"enableSorting":true,"enableOpenForm":true,"enableActions":true,"rowHeight":45,"pinned":0,"widths":{"requestId":144,"date":135},"filterModel":{},"sortModel":[],"enableTitle":true}'
+  is_default_view: true
+  columns:
+  - guid: 7e74f8c2-9d84-4922-9ec2-fb57d5c706a8
+    position: 0
+    options_json:
+    field_guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+    column_type: columns
+    aggregation_type:
+  - guid: 4ed6b900-9fbd-4bf9-a17f-ccd1176ef57d
+    position: 1
+    options_json:
+    field_guid: 8fe9e7d0-cf75-45f5-90c3-59a68a3394e2
+    column_type: columns
+    aggregation_type:
+  - guid: c8d32dd8-1400-4e59-871a-6d601a68ad17
+    position: 2
+    options_json:
+    field_guid: 0aa43b31-eec8-4bf6-aede-25df21509b31
+    column_type: columns
+    aggregation_type:
+  - guid: 9e4e6c68-6442-45dc-bcc7-57216a8f0dc8
+    position: 3
+    options_json:
+    field_guid: 33a7a43c-9e98-43c7-944c-7e432a16c3a3
+    column_type: columns
+    aggregation_type:
+  - guid: 841f49e3-21eb-42c4-8187-9300ba6cfde4
+    position: 4
+    options_json:
+    field_guid: 4eac79ed-9e4b-4a06-ae17-eca521ec5b96
+    column_type: columns
+    aggregation_type:
+- guid: b47fc020-fab4-453b-8f80-2ef807a9d0fa
+  name: My requests
+  db_name: My
+  position: 2
+  options_json: '{"enableQuickSearch":false,"enableFlatMode":false,"enableColumnsResize":true,"enableFiltering":true,"enableSorting":true,"enableOpenForm":true,"enableActions":true,"rowHeight":45,"pinned":0}'
+  is_default_view: false
+  columns:
+  - guid: 52b233fd-06ec-4092-bcd5-3723c3f6f852
+    position: 0
+    options_json:
+    field_guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+    column_type: columns
+    aggregation_type:
+  - guid: dae49bdb-21af-45a6-a847-c71f37f74b68
+    position: 1
+    options_json:
+    field_guid: 33a7a43c-9e98-43c7-944c-7e432a16c3a3
+    column_type: columns
+    aggregation_type:
+  - guid: c14642af-f19f-4543-b3ac-430ca1165746
+    position: 2
+    options_json:
+    field_guid: 4eac79ed-9e4b-4a06-ae17-eca521ec5b96
+    column_type: columns
+    aggregation_type:
+- guid: 9271b537-97d8-44c9-a96d-a7a3b5a3098b
+  name: Department head approval
+  db_name: Head
+  position: 3
+  options_json: '{"enableQuickSearch":true,"enableFlatMode":false,"enableColumnsResize":true,"enableFiltering":true,"enableSorting":true,"enableOpenForm":true,"enableActions":false,"rowHeight":45,"pinned":0,"widths":{"requestId":129,"dep":189,"position":168},"enableTitle":true}'
+  is_default_view: false
+  columns:
+  - guid: 52bba96d-a060-4a6d-9cfc-25811085e6b0
+    position: 0
+    options_json:
+    field_guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+    column_type: columns
+    aggregation_type:
+  - guid: e84d74cd-879e-4e6d-9fcb-2b04593c852b
+    position: 1
+    options_json:
+    field_guid: fca61ece-d8c5-421d-bb76-079794b3bdc1
+    column_type: columns
+    aggregation_type:
+  - guid: 60df0ba0-a7b0-4c19-8329-67509b2362c7
+    position: 2
+    options_json:
+    field_guid: 0aa43b31-eec8-4bf6-aede-25df21509b31
+    column_type: columns
+    aggregation_type:
+  - guid: 5c60cdae-1bb9-4078-8364-9043833fe6a3
+    position: 3
+    options_json:
+    field_guid: 8fe9e7d0-cf75-45f5-90c3-59a68a3394e2
+    column_type: columns
+    aggregation_type:
+- guid: 9ac74780-3977-4b37-9621-c282438cb7a2
+  name: HR Acknowledgement
+  db_name: Hr
+  position: 4
+  options_json: '{"enableQuickSearch":true,"enableFlatMode":false,"enableColumnsResize":true,"enableFiltering":true,"enableSorting":true,"enableOpenForm":true,"enableActions":true,"rowHeight":45,"pinned":0,"widths":{"requestId":132,"position":143,"dep":169},"enableTitle":true}'
+  is_default_view: false
+  columns:
+  - guid: c6d26b3f-e1fa-4be2-b368-d99ce26ffd84
+    position: 0
+    options_json:
+    field_guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+    column_type: columns
+    aggregation_type:
+  - guid: 85361ff9-2c84-4b48-8f19-6e9cf9d15dfb
+    position: 1
+    options_json:
+    field_guid: fca61ece-d8c5-421d-bb76-079794b3bdc1
+    column_type: columns
+    aggregation_type:
+  - guid: 0ae9d483-8e37-457b-a6a1-cf507984946e
+    position: 2
+    options_json:
+    field_guid: 8fe9e7d0-cf75-45f5-90c3-59a68a3394e2
+    column_type: columns
+    aggregation_type:
+  - guid: cb78b121-7aff-49f9-9b88-d269e1e8b946
+    position: 3
+    options_json:
+    field_guid: a7f9c3e2-3be0-4952-bff7-fae24e4615fa
+    column_type: columns
+    aggregation_type:
+  - guid: ba6d4aaa-6248-4612-8ab5-19276b941ea8
+    position: 4
+    options_json:
+    field_guid: d9f518aa-a486-4fa7-9ecd-95d6554b1943
+    column_type: columns
+    aggregation_type:
+AxRoles:
+- guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  name: All users
+  icon:
+  is_dynamic: false
+- guid: e5f34d51-e792-46da-a7f8-906b3114cf7c
+  name: Requester
+  icon: fas fa-user-cog
+  is_dynamic: true
+- guid: 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  name: Department heads
+  icon:
+  is_dynamic: false
+- guid: 8a5855d2-f389-4f98-85e5-6430b37ddef0
+  name: HR department
+  icon:
+  is_dynamic: false
+AxStates:
+- guid: bae3cf8c-6aff-420d-a556-261529665444
+  name: Start
+  is_start: true
+  is_deleted: false
+  is_all: false
+  x: 0.0
+  y: -200.0
+  roles:
+  - b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+- guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  name: New Hire Request
+  is_start: false
+  is_deleted: false
+  is_all: false
+  x: 1.1601333618164062
+  y: -79.09368896484375
+  roles:
+  - b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  - e5f34d51-e792-46da-a7f8-906b3114cf7c
+- guid: 3c09781f-fe51-4b93-a931-6c4820b275eb
+  name: Deleted
+  is_start: false
+  is_deleted: true
+  is_all: false
+  x: 307.7461853027344
+  y: 154.52828979492188
+  roles: []
+- guid: 25cef57a-f3af-4bde-8ad8-cde93621c22e
+  name: All
+  is_start: false
+  is_deleted: false
+  is_all: true
+  x: 312.7461853027344
+  y: 390.7309265136719
+  roles: []
+- guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  name: Department Head Approval
+  is_start: false
+  is_deleted: false
+  is_all: false
+  x: 3.703125
+  y: 48.80499267578125
+  roles:
+  - b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  - 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  - e5f34d51-e792-46da-a7f8-906b3114cf7c
+- guid: b9648f7b-6076-4ef8-b673-614993416180
+  name: HR Acknowledgement
+  is_start: false
+  is_deleted: false
+  is_all: false
+  x: 5.9297027587890625
+  y: 211.05882263183594
+  roles:
+  - b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  - 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  - 8a5855d2-f389-4f98-85e5-6430b37ddef0
+  - e5f34d51-e792-46da-a7f8-906b3114cf7c
+- guid: b45dece8-0871-48ab-942f-b025498ce930
+  name: Archive
+  is_start: false
+  is_deleted: false
+  is_all: false
+  x: 8.703125
+  y: 376.39105224609375
+  roles:
+  - 8a5855d2-f389-4f98-85e5-6430b37ddef0
+AxActions:
+- guid: 0ebeacbc-12a7-4a92-9b80-069afe117ce7
+  name: Create request
+  db_name:
+  from_state_guid: bae3cf8c-6aff-420d-a556-261529665444
+  to_state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+- guid: 092658d1-4e34-4af7-950f-73e6ded0353f
+  name: Update
+  db_name:
+  from_state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  to_state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - e5f34d51-e792-46da-a7f8-906b3114cf7c
+- guid: 9ecc233a-5ea9-48dd-9c4d-fb39db27189e
+  name: Update
+  db_name:
+  from_state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  to_state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  - e5f34d51-e792-46da-a7f8-906b3114cf7c
+- guid: 23fdf427-d9cc-45e5-8cf3-b2495ef16f7e
+  name: Update
+  db_name:
+  from_state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  to_state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - 8a5855d2-f389-4f98-85e5-6430b37ddef0
+- guid: a3e1d3b7-cab7-4d68-ae94-d4b1d3125e7b
+  name: Cancel
+  db_name:
+  from_state_guid: 25cef57a-f3af-4bde-8ad8-cde93621c22e
+  to_state_guid: b45dece8-0871-48ab-942f-b025498ce930
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - 8a5855d2-f389-4f98-85e5-6430b37ddef0
+  - e5f34d51-e792-46da-a7f8-906b3114cf7c
+- guid: 89780ce7-45d2-441d-a21a-79fe4f51d47d
+  name: Approve with department head
+  db_name:
+  from_state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  to_state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - e5f34d51-e792-46da-a7f8-906b3114cf7c
+- guid: 21b5be7e-e484-40b9-9e37-21fc9e0fcddb
+  name: Approve
+  db_name:
+  from_state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  to_state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles: []
+- guid: b0699d68-aabf-4318-992e-92963f682912
+  name: Decline
+  db_name:
+  from_state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  to_state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  confirm_text:
+  close_modal: true
+  icon:
+  radius: -169.54391096215792
+  roles:
+  - 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+- guid: 8986971e-09e1-4d4d-b763-badddfcceb94
+  name: Archive
+  db_name:
+  from_state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  to_state_guid: b45dece8-0871-48ab-942f-b025498ce930
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - 8a5855d2-f389-4f98-85e5-6430b37ddef0
+AxRoleFieldPermission:
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  field_guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  field_guid: 0aa43b31-eec8-4bf6-aede-25df21509b31
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  field_guid: 33a7a43c-9e98-43c7-944c-7e432a16c3a3
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  field_guid: 8fe9e7d0-cf75-45f5-90c3-59a68a3394e2
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  field_guid: 4eac79ed-9e4b-4a06-ae17-eca521ec5b96
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: 0aa43b31-eec8-4bf6-aede-25df21509b31
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: 33a7a43c-9e98-43c7-944c-7e432a16c3a3
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: 8fe9e7d0-cf75-45f5-90c3-59a68a3394e2
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: 4eac79ed-9e4b-4a06-ae17-eca521ec5b96
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: 7aebe9ab-7577-46b8-a0ff-4ae8765fdfa7
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: 0aa43b31-eec8-4bf6-aede-25df21509b31
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: 33a7a43c-9e98-43c7-944c-7e432a16c3a3
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: 8fe9e7d0-cf75-45f5-90c3-59a68a3394e2
+  read: true
+  edit: false
+- role_guid: b4cf4a15-ad7f-44b6-b7cc-c3a551014f76
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: 4eac79ed-9e4b-4a06-ae17-eca521ec5b96
+  read: true
+  edit: false
+- role_guid: e5f34d51-e792-46da-a7f8-906b3114cf7c
+  state_guid: 5fe59bbd-c7bc-4bf6-b3d0-d4e6a3027e62
+  field_guid: None
+  read: true
+  edit: true
+- role_guid: 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+  read: true
+  edit: true
+- role_guid: 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: 4f8e4d5c-e226-4ef4-abd5-d505ed8d2611
+  read: true
+  edit: true
+- role_guid: e5f34d51-e792-46da-a7f8-906b3114cf7c
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: 4f8e4d5c-e226-4ef4-abd5-d505ed8d2611
+  read: true
+  edit: true
+- role_guid: e5f34d51-e792-46da-a7f8-906b3114cf7c
+  state_guid: 94b21fdf-e8bc-4e72-8ec6-be2633e05fc9
+  field_guid: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+  read: true
+  edit: true
+- role_guid: 8a5855d2-f389-4f98-85e5-6430b37ddef0
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: None
+  read: true
+  edit: true
+- role_guid: e5f34d51-e792-46da-a7f8-906b3114cf7c
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+  read: true
+  edit: false
+- role_guid: 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: f3b1fd42-28bf-4406-a319-c62cac13ca4f
+  read: true
+  edit: false
+- role_guid: 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: b1ce693c-6f2b-4468-bb4a-6361d17dbe9d
+  read: true
+  edit: false
+- role_guid: 9f093c5c-fb8d-46bd-8ab3-a1cc85e21061
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: 4f8e4d5c-e226-4ef4-abd5-d505ed8d2611
+  read: true
+  edit: true
+- role_guid: e5f34d51-e792-46da-a7f8-906b3114cf7c
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: b1ce693c-6f2b-4468-bb4a-6361d17dbe9d
+  read: true
+  edit: false
+- role_guid: e5f34d51-e792-46da-a7f8-906b3114cf7c
+  state_guid: b9648f7b-6076-4ef8-b673-614993416180
+  field_guid: 4f8e4d5c-e226-4ef4-abd5-d505ed8d2611
+  read: true
+  edit: true
+- role_guid: 8a5855d2-f389-4f98-85e5-6430b37ddef0
+  state_guid: b45dece8-0871-48ab-942f-b025498ce930
+  field_guid: None
+  read: true
+  edit: false

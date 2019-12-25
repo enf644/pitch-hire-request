@@ -1,0 +1,194 @@
+AxForm:
+  guid: b09f6590-31bc-4ab7-a400-d2ba26203e05
+  name: Candidate
+  db_name: PitchHireRequestCandidate
+  parent: 7202cb0a-7e68-4073-ab2b-2b9e94ca0fcd
+  position: 1
+  tom_label: '{{name}}'
+  icon: chess-pawn
+AxFields:
+- guid: 614ab38b-ff7d-4756-a92a-2e613243ca8b
+  name: Default tab
+  db_name:
+  position: 0
+  options_json:
+  private_options_json:
+  field_type_tag:
+  is_tab: true
+  is_required: false
+  is_whole_row: false
+  parent: None
+- guid: c1a289fc-e76d-4b80-a3cb-2c74e3e93cff
+  name: Name
+  db_name: name
+  position: 0
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxString
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: 614ab38b-ff7d-4756-a92a-2e613243ca8b
+- guid: 0aa2a915-d112-4b32-a0df-9a760c24864d
+  name: Resume
+  db_name: resume
+  position: 1
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxFiles
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: 614ab38b-ff7d-4756-a92a-2e613243ca8b
+- guid: 1cef3a50-7d1b-4646-a42e-804b3e3366e9
+  name: Create Job Application
+  db_name: jobApplication
+  position: 2
+  options_json: '{}'
+  private_options_json:
+  field_type_tag: AxSwitch
+  is_tab: false
+  is_required: false
+  is_whole_row: false
+  parent: 614ab38b-ff7d-4756-a92a-2e613243ca8b
+AxMetrics: []
+AxGrids:
+- guid: 7aed68f7-fdc0-42da-817f-9ca2d4889e98
+  name: Default grid
+  db_name: Default
+  position: 1
+  options_json: '{"enableQuickSearch":false,"enableFlatMode":false,"enableColumnsResize":true,"enableFiltering":true,"enableSorting":true,"enableOpenForm":true,"enableActions":true,"rowHeight":45,"pinned":0,"enableTitle":true}'
+  is_default_view: true
+  columns:
+  - guid: 06b670c5-f858-42f4-9265-75c73573551c
+    position: 0
+    options_json:
+    field_guid: c1a289fc-e76d-4b80-a3cb-2c74e3e93cff
+    column_type: columns
+    aggregation_type:
+  - guid: 4ce2a74a-a468-49ed-8b0e-c70c2c0727a2
+    position: 1
+    options_json:
+    field_guid: 0aa2a915-d112-4b32-a0df-9a760c24864d
+    column_type: columns
+    aggregation_type:
+  - guid: c062a8e0-bb19-4adf-b87b-a6015241016c
+    position: 2
+    options_json:
+    field_guid: 1cef3a50-7d1b-4646-a42e-804b3e3366e9
+    column_type: columns
+    aggregation_type:
+AxRoles:
+- guid: adec946f-9334-40e9-8ac8-d88704797bc3
+  name: HR department
+  icon:
+  is_dynamic: false
+- guid: 3ddce456-423b-4ae3-899b-7cfc6958d142
+  name: All users
+  icon:
+  is_dynamic: false
+AxStates:
+- guid: 28f2f55a-18f4-444f-9ed8-795bb8bd050b
+  name: Start
+  is_start: true
+  is_deleted: false
+  is_all: false
+  x: 0.0
+  y: -200.0
+  roles:
+  - adec946f-9334-40e9-8ac8-d88704797bc3
+- guid: 9ba71aaf-1436-43ee-b233-fcf319bf625e
+  name: Created
+  is_start: false
+  is_deleted: false
+  is_all: false
+  x: 1.0
+  y: 1.0
+  roles:
+  - 3ddce456-423b-4ae3-899b-7cfc6958d142
+  - adec946f-9334-40e9-8ac8-d88704797bc3
+- guid: c310b34e-d52d-4790-aa53-922b71f528f4
+  name: Deleted
+  is_start: false
+  is_deleted: true
+  is_all: false
+  x: 318.0
+  y: 204.0
+  roles: []
+- guid: 6fbb8a64-b93c-418b-a3fc-95ed38707e53
+  name: All
+  is_start: false
+  is_deleted: false
+  is_all: true
+  x: 300.0
+  y: 20.0
+  roles: []
+- guid: e29e384a-3d0b-48f5-b921-61056d32e31a
+  name: Archive
+  is_start: false
+  is_deleted: false
+  is_all: false
+  x: -0.296875
+  y: 192.5
+  roles:
+  - adec946f-9334-40e9-8ac8-d88704797bc3
+AxActions:
+- guid: 21bfa9dd-564a-4c19-baea-ffb4e03c64b5
+  name: Create new profile
+  db_name:
+  from_state_guid: 28f2f55a-18f4-444f-9ed8-795bb8bd050b
+  to_state_guid: 9ba71aaf-1436-43ee-b233-fcf319bf625e
+  confirm_text:
+  close_modal: true
+  icon: chess-pawn
+  radius:
+  roles:
+  - adec946f-9334-40e9-8ac8-d88704797bc3
+- guid: 400eb2d1-64ef-4a41-af69-eaa575ed3ef7
+  name: Update
+  db_name:
+  from_state_guid: 9ba71aaf-1436-43ee-b233-fcf319bf625e
+  to_state_guid: 9ba71aaf-1436-43ee-b233-fcf319bf625e
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - adec946f-9334-40e9-8ac8-d88704797bc3
+- guid: cd261d98-ef67-4dd6-84f5-11a7003c44f8
+  name: Update
+  db_name:
+  from_state_guid: e29e384a-3d0b-48f5-b921-61056d32e31a
+  to_state_guid: e29e384a-3d0b-48f5-b921-61056d32e31a
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles: []
+- guid: d7246d62-eadb-4908-901c-ee6904aa6ee5
+  name: Archive
+  db_name:
+  from_state_guid: 9ba71aaf-1436-43ee-b233-fcf319bf625e
+  to_state_guid: e29e384a-3d0b-48f5-b921-61056d32e31a
+  confirm_text:
+  close_modal: true
+  icon:
+  radius:
+  roles:
+  - adec946f-9334-40e9-8ac8-d88704797bc3
+AxRoleFieldPermission:
+- role_guid: adec946f-9334-40e9-8ac8-d88704797bc3
+  state_guid: 28f2f55a-18f4-444f-9ed8-795bb8bd050b
+  field_guid: None
+  read: true
+  edit: true
+- role_guid: 3ddce456-423b-4ae3-899b-7cfc6958d142
+  state_guid: 9ba71aaf-1436-43ee-b233-fcf319bf625e
+  field_guid: None
+  read: true
+  edit: false
+- role_guid: adec946f-9334-40e9-8ac8-d88704797bc3
+  state_guid: 9ba71aaf-1436-43ee-b233-fcf319bf625e
+  field_guid: None
+  read: true
+  edit: true

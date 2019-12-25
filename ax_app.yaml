@@ -1,0 +1,33 @@
+Code name: pitch-hire-request
+Root folder: 7202cb0a-7e68-4073-ab2b-2b9e94ca0fcd
+Forms:
+- PitchHireRequest
+- PitchHireRequestCandidate
+Folders:
+- guid: 7202cb0a-7e68-4073-ab2b-2b9e94ca0fcd
+  name: Hire Request
+  parent: None
+  position: '0'
+Root page: bde3de88-a1d8-4bb8-8fe1-13a59f532420
+Pages:
+- guid: bde3de88-a1d8-4bb8-8fe1-13a59f532420
+  name: Pitch Hire Request
+  db_name: PitchHireRequest
+  position:
+  parent: 7ac81f1f-6168-4576-827f-37b5be6e32d8
+- guid: fca73650-a9ad-49f9-b540-58945e5003c0
+  name: My requests
+  db_name:
+  position:
+  parent: bde3de88-a1d8-4bb8-8fe1-13a59f532420
+- guid: 3608d4a7-bdfa-4819-be11-5688bfeb8f7e
+  name: Department Head Approval
+  db_name:
+  position:
+  parent: bde3de88-a1d8-4bb8-8fe1-13a59f532420
+- guid: 4d5a2cec-a0c9-494c-8c67-d186c0493e2b
+  name: HR Acknowledgement
+  db_name:
+  position:
+  parent: bde3de88-a1d8-4bb8-8fe1-13a59f532420
+Ax version: 0.34.0
