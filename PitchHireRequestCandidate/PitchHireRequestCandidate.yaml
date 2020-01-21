@@ -105,8 +105,8 @@ AxStates:
   x: 1.0
   y: 1.0
   roles:
-  - 3ddce456-423b-4ae3-899b-7cfc6958d142
   - adec946f-9334-40e9-8ac8-d88704797bc3
+  - 3ddce456-423b-4ae3-899b-7cfc6958d142
 - guid: c310b34e-d52d-4790-aa53-922b71f528f4
   name: Deleted
   is_start: false
@@ -141,7 +141,7 @@ AxActions:
   confirm_text:
   close_modal: true
   icon: chess-pawn
-  radius:
+  radius: 0.0
   roles:
   - adec946f-9334-40e9-8ac8-d88704797bc3
 - guid: 400eb2d1-64ef-4a41-af69-eaa575ed3ef7
@@ -152,7 +152,7 @@ AxActions:
   confirm_text:
   close_modal: true
   icon:
-  radius:
+  radius: 0.0
   roles:
   - adec946f-9334-40e9-8ac8-d88704797bc3
 - guid: cd261d98-ef67-4dd6-84f5-11a7003c44f8
@@ -163,7 +163,7 @@ AxActions:
   confirm_text:
   close_modal: true
   icon:
-  radius:
+  radius: 0.0
   roles: []
 - guid: d7246d62-eadb-4908-901c-ee6904aa6ee5
   name: Archive
@@ -173,7 +173,7 @@ AxActions:
   confirm_text:
   close_modal: true
   icon:
-  radius:
+  radius: 0.0
   roles:
   - adec946f-9334-40e9-8ac8-d88704797bc3
 AxRoleFieldPermission:

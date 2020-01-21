@@ -4,9 +4,9 @@ Raise a request to hire new staff for your department.
 **Tags:** #hr
 
 **Form:**
-![alt text](https://raw.githubusercontent.com/enf644/pitch-hire-request/master/docs/form1.png)
-![alt text](https://raw.githubusercontent.com/enf644/pitch-hire-request/master/docs/form2.png)
-![alt text](https://raw.githubusercontent.com/enf644/pitch-hire-request/master/docs/form3.png)
+<img src="https://raw.githubusercontent.com/enf644/pitch-hire-request/master/docs/form1.png" width="600">
+<img src="https://raw.githubusercontent.com/enf644/pitch-hire-request/master/docs/form2.png" width="600">
+<img src="https://raw.githubusercontent.com/enf644/pitch-hire-request/master/docs/form3.png" width="600">
 
 **Workflow:**
-![alt text](https://github.com/enf644/pitch-hire-request/raw/master/docs/workflow.gif)
+<img src="https://github.com/enf644/pitch-hire-request/raw/master/docs/workflow.gif" width="600">
